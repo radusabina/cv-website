@@ -1,14 +1,36 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutComponent } from './about/about.component';
+import { EducationComponent } from './education/education.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  imports: [
+    CommonModule,
+    AboutComponent,
+    EducationComponent,
+    ProjectsComponent,
+    ProjectsComponent,
+    SkillsComponent,
+    NgbModule,
+  ],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'cv-website';
+  constructor(private modalService: NgbModal) {}
+
+  public open(modal: any): void {
+    this.modalService.open(modal);
+  }
+
+  selectedSection: string = 'about';
+
+  showSection(section: string) {
+    this.selectedSection = section;
+  }
 }

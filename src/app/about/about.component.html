@@ -1,0 +1,74 @@
+<h3 class="text-left mb-5 mt-4 ps-3 fw-bold" style="font-size: 2.5rem">
+  Sabina-Alexandra Radu
+</h3>
+
+<div class="container mt-4">
+  <div class="row">
+    <h2 class="text-left mb-2 fw-bold" style="font-size: 1.5rem">
+      Contact details:
+    </h2>
+    <div class="col-md-10 ps-5">
+      <ul class="list-unstyled">
+        <li class="mb-2">
+          <i
+            class="bi bi-telephone-fill me-2"
+            style="color: rgb(86, 37, 166)"
+          ></i>
+          +40749631831
+        </li>
+        <li class="mb-2">
+          <i
+            class="bi bi-envelope-fill me-2"
+            style="color: rgb(86, 37, 166)"
+          ></i>
+          <a href="mailto:sabina.radu02@gmail.com" style="color: black"
+            >sabina.radu02&#64;gmail.com</a
+          >
+        </li>
+        <li class="mb-2">
+          <i class="bi bi-linkedin me-2" style="color: rgb(86, 37, 166)"></i>
+          <a
+            href="https://www.linkedin.com/in/sabina-alexandra-radu-806bb8271/"
+            target="_blank"
+            style="color: black"
+            >Sabina Radu</a
+          >
+        </li>
+        <li class="mb-2">
+          <i
+            class="bi bi-geo-alt-fill me-2"
+            style="color: rgb(86, 37, 166)"
+          ></i>
+          Cluj-Napoca, Romania
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <h2 class="text-left mb-4 fw-bold" style="font-size: 1.5rem">About Me</h2>
+
+  <div
+    class="d-flex justify-content-center align-items-center"
+    (click)="nextParagraph()"
+  >
+    <div class="flashcard-container">
+      <div
+        class="circle"
+        *ngFor="let paragraph of paragraphs; let i = index"
+        [ngClass]="{
+          active: i === currentIndex,
+          next: i === nextIndex,
+          previous: i === previousIndex
+        }"
+      >
+        <div
+          class="circle-item d-flex justify-content-center align-items-center"
+        >
+          <p class="text-center m-2">{{ paragraph }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
